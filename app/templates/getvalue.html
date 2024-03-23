@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-based MySQL Interaction</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        input, select {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing:inherit;
+        }
+        button {
+            align-items:left;
+            background-color:transparent;
+            color: black;
+            padding: 1px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor:context-menu;
+            transition: background-color 1s ease, padding 0.5s ease;
+            
+            
+        }
+        button:hover {
+            background-color: #45a049;
+            color: white;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get Data from Database</h1>
+    <form action="/get_special" method="post">
+
+        <label for="month" >Month:</label>
+        <select id="month" name="month" required>
+            {% for month in month_name %}
+                {% for i in month.split('\n') %}
+                    <option value="{{ month }}">{{month}}</option>
+                {% endfor %}
+            {% endfor %}
+
+
+
+        </select><br>
+        <label for="database"> database:</label>
+        <input type="text" id="database" name="database" required>
+        
+        <button type="submit">Get values</button>
+    </form>
+    
+</body>
+</head>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data from Database</title>
+    <link rel="stylesheet" href="/static/display_style.css">
+</head>
+<body>
+    <h1>Data from Database</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>{{ database }}</th>
+                <th>Day</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>amount</th>
+                <th>name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in analysis %}
+            <tr>
+                
+                <th>{ row[0] }</th>
+                <th>{ row[1] }</th>
+                <th>{ row[2] }</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Average</h2>
+    <p>The average amount per day for this month is: {{r1}}</p>
+    {{ analysis }}
+    <form action="/go_back" method="post">
+        <button type="submit">Go Back</button>
+    </form>
+</body>
+</html>

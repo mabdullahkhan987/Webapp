@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="/static/admin_style.css">
+</head>
+<body>
+    <header>
+        <p>Ukaash Skin Clinic</p>
+    </header>
+    <div class="container">
+        <h1>Admin Page</h1>
+        <form action="/insert_data2" method="POST">
+            <label for="procedurename">Procedure Name:</label>
+            <input type="text" id="procedurename" name="procedurename" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="information">
+        <form action="/get" method="get, post">
+            <table>
+                <thead>
+                    <tr>
+                        
+                        <th>Current Procedures</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                    <tr>
+                        
+                        <td>
+                            <ul class="bullet">
+                                <li>{{ row[0] }}</li>
+                            </ul>
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </form>
+        
+    </div>
+ 
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="instalogo.jpg" alt="logo">
+            <h2>Main Menu</h2>
+        </div>
+        <ul class="links">
+            <h4>Main Menu</h4>
+        <li>
+            <span class="material-symbols-outlined">dashboard</span>
+            <a href="/">Dashboard</a>
+        </li>
+        
+        <li>
+            <span class="material-symbols-outlined">flag</span>
+            <a href="/login">Reports</a>
+        </li>
+        <hr>
+            <h4>Advanced</h4>
+        
+        <li>
+            <span class="material-symbols-outlined">group</span>
+            <a href="#">Developer </a>
+        </li>
+        
+        
+        <li>
+            <span class="material-symbols-outlined">monitoring</span>
+            <a href="/get_special">Analytic</a>
+        </li>
+        <hr>
+            <h4>Account</h4>
+        <li>
+            <span class="material-symbols-outlined">bar_chart</span>
+            <a href="#">Overview</a>
+        </li>
+        <li>
+            <span class="material-symbols-outlined">mail</span>
+            <a href="#">Message</a>
+        </li>
+        <li>
+            <span class="material-symbols-outlined">settings</span>
+            <a href="#">Settings</a>
+        </li>
+        <li class="logout-link">
+            <span class="material-symbols-outlined">logout</span>
+            <a href="#">Logout</a>
+        </li>
+        </ul>
+  </aside>
+</body>
+</html>

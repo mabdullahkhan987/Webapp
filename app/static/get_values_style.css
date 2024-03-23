@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+}
+input, select {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing:inherit;
+}
+button {
+    align-items:left;
+    background-color:transparent;
+    color: black;
+    padding: 1px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor:context-menu;
+    transition: background-color 1s ease, padding 0.5s ease;
+    
+    
+}
+
+button:hover {
+    background-color: cyan;
+    color: white;
+    padding: 10px 15px;
+}

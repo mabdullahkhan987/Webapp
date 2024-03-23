@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            text-align: center;
+            background-color: darkgray;
+        }
+        input {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            align-items: center;
+            background-color: blueviolet;
+            width: 50%;
+            color: white;
+            cursor: context-menu;
+            
+            padding: 10px 15px;
+            border: none;
+            border-radius:5px;
+            transition: background-color 0.5 ease;
+
+        }
+        button:hover {
+            background-color:rgb(120, 35, 199);
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Register</h1>
+    <div class="container">
+        <form action="/register" method="post">
+            <label for="reg_username">Username:</label>
+            <input type="text" id="reg_username" name="username" placeholder="Enter Username" required>
+            <br>
+            <label for="reg_password">Password:</label>
+            <input type="password" id="reg_password" name="password" placeholder="Enter Password" required>
+            <br>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="text" id="confirm_password" name="confirm_password" placeholder="Type Your Password again" required>
+            <br>
+            <button type="submit">Register</button>
+        </form>
+    </div>    
+</body>

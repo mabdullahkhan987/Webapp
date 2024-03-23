@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-based MySQL Interaction</title>
+    <link rel="stylesheet" href="/static/get_values_style.css">
+</head>
+<body>
+    <h1>Get Data from Database</h1>
+    <form action="/get_values" method="post">
+
+        <label for="month" >Month:</label>
+        <select id="month" name="month" required>
+            {% for month in month_name %}
+                {% for line in month.split('\n') %}
+                    <option value="{{ month }}">{{month}}</option>
+                {% endfor %}
+            {% endfor %}
+
+
+
+        </select><br>
+        
+        <button type="submit">Get values</button>
+    </form>
+    
+</body>
+</head>

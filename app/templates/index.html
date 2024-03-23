@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-based MySQL Interaction</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="/static/index_style.css">
+    
+    
+</head>
+<body>
+    
+
+    
+    
+    <h1>UKAASH DATABASE</h1>
+    <div class="container">
+        <form action="/insert_data" method="post">
+            <label for="month">Month:</label>
+            <select id="month" name="month" required>
+                {% for month in month_name %}
+                    {% for line in month.split('\n') %}
+                    
+                        <option value="{{ month }}">{{ month }}</option>
+                    {% endfor %}
+                {% endfor %}
+            </select><br>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name" required><br>
+
+            <label for="procedure_type">Procedure Type:</label>
+            <select id="procedure_type" name="procedure_type" required>
+                {% for procedure in procedure_name %}
+                    {% for line in procedure.split('\n') %}
+                        <option value="{{ line }}">{{ line }}</option>
+                    {% endfor %}    
+                    
+                {% endfor %}    
+            </select><br>
+            
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" required><br>
+
+            <label for="day">Day:</label>
+            <select id="day" name="day" required>
+                {% for day in day_name %}
+                    {% for line in day.split('\n') %}
+                        <option value="{{ day }}">{{ day }}</option>
+                    {% endfor %}
+                {% endfor %}
+            </select><br>
+            
+
+            <button type="submit">Submit</button>
+        </form>
+    </div> 
+    <aside class="sidebar">
+        <div class="logo">
+          <img src="cropped-logo-small-45-e1596732778863.png" alt="logo">
+          <h2>Main Menu</h2>
+        </div>
+        <ul class="links">
+          <h4>Main Menu</h4>
+          <li>
+            <span class="material-symbols-outlined">dashboard</span>
+            <a href="/">Dashboard</a>
+          </li>
+          
+          <li>
+            <span class="material-symbols-outlined">flag</span>
+            <a href="/login">Reports</a>
+          </li>
+          <hr>
+          <h4>Advanced</h4>
+         
+          <li>
+            <span class="material-symbols-outlined">group</span>
+            <a href="/admin">Admin Page </a>
+          </li>
+          
+          
+          <li>
+            <span class="material-symbols-outlined">monitoring</span>
+            <a href="/get_special">Analytic</a>
+          </li>
+          <hr>
+          <h4>Account</h4>
+          <li>
+            <span class="material-symbols-outlined">bar_chart</span>
+            <a href="#">Overview</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">mail</span>
+            <a href="#">Message</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">settings</span>
+            <a href="#">Settings</a>
+          </li>
+          <li class="logout-link">
+            <span class="material-symbols-outlined">logout</span>
+            <a href="#">Logout</a>
+          </li>
+        </ul>
+      </aside>
+    
+    
+    <p>Visit my favorite website: <a href="https://ukaashskinclinic.pk/" target="_blank"> Visit ukaashskinclinic.pk</a></p>
+    
+    
+    
+
+    
+    
+</body>
+</html>
